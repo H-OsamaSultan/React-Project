@@ -19,9 +19,17 @@ const App = () => {
     },
   ];
 
+  const onExpenseDataSubmitHandler = (recievedExpenseData) => {
+    console.log("In appppp");
+    console.log(recievedExpenseData);
+    const DataRecieved = {
+      ...recievedExpenseData,
+    };
+  };
+
   return (
     <div>
-      <NewExpense></NewExpense>
+      <NewExpense onExpenseDataSubmit={onExpenseDataSubmitHandler}></NewExpense>
       <Expensess item={Expenses}></Expensess>
     </div>
   );
